@@ -29,8 +29,8 @@ public class Server
     private ServerSocket serverSocket = null; // Server
     private List<Socket> playerSockets = new ArrayList<Socket>();
     // Data Streams
-    private List<DataInputStream> inputs = null;
-    private List<DataOutputStream> outputs = null;
+    private List<DataInputStream> inputs = new ArrayList<DataInputStream>();
+    private List<DataOutputStream> outputs = new ArrayList<DataOutputStream>();
     // Holders
     private String message; // Variable for holding a message
 
