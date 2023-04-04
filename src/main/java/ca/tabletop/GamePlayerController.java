@@ -5,21 +5,11 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class GamePlayerController 
 {
-    //****************************************************/
-    //                  CONSTANTS
-    //****************************************************/
-    final int DEFAULT_PORT = 5969;
-
-    //****************************************************/
-    //                  VARIABLES
-    //****************************************************/
-    private int currentEnvironment = 0;
-    private int numberOfImages;
-  
     //****************************************************/
     //                  FXML OBJECTS
     //****************************************************/
@@ -35,41 +25,15 @@ public class GamePlayerController
     {
         App.startGamePlayer(this);
 
-        // Get the number of images in the system from App
-        numberOfImages = SlideShow.getNumberOfImages();
-
         // Set the environment image to the current image
         imageViewEnvironment.setImage(SlideShow.getEnvironmentImage(0));
     }
 
-    //****************************************************/
-    //                  ENVIRONMENT
-    //****************************************************/
-    // Changes the environment to the next one
-    @FXML 
-    public void nextEnvironment() throws IOException
+    // Sets the image view image for use in the command reader
+    public void setImageViewEnvironment(Image imageToSet)
     {
-        if(currentEnvironment+1 < numberOfImages)
-        {
-            // Change to the next environment
-            currentEnvironment++;
-            // Set the environment to the current enviroment
-            imageViewEnvironment.setImage(SlideShow.getEnvironmentImage(currentEnvironment));
-        }
+        imageViewEnvironment.setImage(imageToSet);
     }
-    // Changes the environment to the previous one
-    @FXML 
-    public void previousEnvironment() throws IOException
-    {
-        if(currentEnvironment > 0)
-        {
-            // Change to the previous environment
-            currentEnvironment--;
-            // Set the environment to the new current enviroment
-            imageViewEnvironment.setImage(SlideShow.getEnvironmentImage(currentEnvironment));
-        }
-    }
-
 
     // Sets the message
     public void setTextAreaMessages(String message) 

@@ -128,13 +128,13 @@ public class CommandReader extends Thread
         else if(message.equals(App.getEnvNextCommand()))
         {
             // Moves to the next environment file
-            SlideShow.nextEnvironment();
+            controller.setImageViewEnvironment(SlideShow.nextEnvironment());
             System.out.println("Command: Next Environment");
         }
         else if(message.equals(App.getEnvPreviousCommand()))
         {
             // Moves to the next environment file
-            SlideShow.previousEnvironment();
+            controller.setImageViewEnvironment(SlideShow.previousEnvironment());
             System.out.println("Command: Previous Environment");
         }
     }
