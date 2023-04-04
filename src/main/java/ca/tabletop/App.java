@@ -75,14 +75,14 @@ public class App extends Application
     // Functions to be used by the game master to send commands to the game players
     public static boolean acceptConnection(){return server.acceptSocket();}
     public static void sendMessageToPlayer(int player, String message){server.sendMessage(player, message);}
-    public static void sendNextEnvironment() throws IOException{server.sendCommand(App.getEnvNextCommand());}
-    public static void sendPreviousEnvironment() throws IOException{server.sendCommand(App.getEnvPreviousCommand());}
+    public static void sendNextEnvironment() throws IOException{server.sendCommand(MUSIC_NEXT_COMMAND);}
+    public static void sendPreviousEnvironment() throws IOException{server.sendCommand(MUSIC_PREVIOUS_COMMAND);}
     public static void sendNextMusic() throws IOException{server.sendCommand(MUSIC_NEXT_COMMAND);}
     public static void sendPreviousMusic() throws IOException{server.sendCommand(MUSIC_PREVIOUS_COMMAND);}
     public static void sendToggleMusic() throws IOException{server.sendCommand(MUSIC_TOGGLE_COMMAND);}
     public static void sendToMusic(int index) throws IOException{server.sendCommand(MUSIC_CHANGE_COMMAND + index);}
     public static void sendToggleEffect() throws IOException{server.sendCommand(EFFECT_TOGGLE_COMMAND);}
-    public static void sendToEffect(int index) throws IOException{server.sendCommand(App.getEffectChangeCommand() + index);}
+    public static void sendToEffect(int index) throws IOException{server.sendCommand(EFFECT_CHANGE_COMMAND + index);}
 
     //****************************************************/
     //                  CLIENT CONTROLS

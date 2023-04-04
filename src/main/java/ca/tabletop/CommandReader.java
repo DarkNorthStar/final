@@ -91,28 +91,7 @@ public class CommandReader extends Thread
         int index = 0;
         String indexString = "";
         // Checks for indexes in the command "TODO effective but not the best way to do things"
-        if(message.length() > App.getMusicChangeCommand().length())
-        {
-            try
-            {
-                // Start at the first possable numeric index
-                // Collect all digits between here and the end of the string
-                for(int i = 13; i < message.length(); i++)
-                {
-                    // Add to the index string
-                    indexString = indexString + message.charAt(i);
-                }
-                // Try parseing to a int
-                index = Integer.parseInt(indexString);
-                // Set message without the index
-                message = App.getMusicChangeCommand();
-            }
-            catch(NumberFormatException ex)
-            {
-                System.out.println("Not a number");
-            }
-        }
-        else if(message.length() > App.getEffectChangeCommand().length())
+        if(message.length() > App.getEffectChangeCommand().length())
         {
             try
             {
@@ -127,6 +106,27 @@ public class CommandReader extends Thread
                 index = Integer.parseInt(indexString);
                 // Set message without the index
                 message = App.getEffectChangeCommand();
+            }
+            catch(NumberFormatException ex)
+            {
+                System.out.println("Not a number");
+            }
+        }
+        else if(message.length() > App.getMusicChangeCommand().length())
+        {
+            try
+            {
+                // Start at the first possable numeric index
+                // Collect all digits between here and the end of the string
+                for(int i = 13; i < message.length(); i++)
+                {
+                    // Add to the index string
+                    indexString = indexString + message.charAt(i);
+                }
+                // Try parseing to a int
+                index = Integer.parseInt(indexString);
+                // Set message without the index
+                message = App.getMusicChangeCommand();
             }
             catch(NumberFormatException ex)
             {
