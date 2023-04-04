@@ -97,7 +97,7 @@ public class CommandReader extends Thread
             {
                 // Start at the first possable numeric index
                 // Collect all digits between here and the end of the string
-                for(int i = 13; i <= message.length(); i++)
+                for(int i = 13; i < message.length(); i++)
                 {
                     // Add to the index string
                     indexString = indexString + message.charAt(i);
