@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.GameCreatorController">
+    <children>
+        <Label text="Game Creator">
+         <font>
+            <Font name="Felix Titling" size="50.0" />
+         </font></Label>
+      <HBox alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Music">
+                     <font>
+                        <Font name="Felix Titling" size="25.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="listViewMusic" />
+                  <Button fx:id="buttonAddMusic" mnemonicParsing="false" onAction="#addMusic" text="Add" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Felix Titling" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Images">
+                     <font>
+                        <Font name="Felix Titling" size="25.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="listViewImages" />
+                  <Button fx:id="buttonAddImage" mnemonicParsing="false" onAction="#addImage" text="Add" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Felix Titling" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Effects">
+                     <font>
+                        <Font name="Felix Titling" size="25.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="listViewEffects" />
+                  <Button fx:id="buttonAddEffect" mnemonicParsing="false" onAction="#addEffect" text="Add" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Felix Titling" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#openCharacterCreator" prefHeight="88.0" prefWidth="432.0" text="Character">
+                     <font>
+                        <Font name="Felix Titling" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="buttonMainMenu" mnemonicParsing="false" onAction="#returnMainMenu" prefHeight="75.0" prefWidth="160.0" text="Main Menu">
+                     <font>
+                        <Font name="Felix Titling" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+      </HBox>
+    </children>
+</VBox>
