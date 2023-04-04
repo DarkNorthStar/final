@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.MainMenuController">
+   <children>
+      <Label contentDisplay="CENTER" text="Character Creator" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Felix Titling" size="64.0" />
+         </font></Label>
+      <ScrollPane>
+        <content>
+          <AnchorPane>
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="154.0" prefWidth="386.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Character name:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Felix Titling" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Class:" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Felix Titling" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="12.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="level" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Felix Titling" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="&lt;" />
+                                    <TextField />
+                                    <Button mnemonicParsing="false" text="&gt;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="alignment" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Felix Titling" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="&lt;" />
+                                    <TextField />
+                                    <Button mnemonicParsing="false" text="&gt;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="xp" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Felix Titling" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="&lt;" />
+                                    <TextField />
+                                    <Button mnemonicParsing="false" text="&gt;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="154.0" prefWidth="335.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label text="Strength" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Dexterity" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Constitution" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Intelligence" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Wisdom" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Charisma" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
