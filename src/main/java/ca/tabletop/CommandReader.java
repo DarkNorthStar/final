@@ -4,7 +4,6 @@ package ca.tabletop;
 //                  IMPORTS
 //****************************************************/
 import java.io.IOException;
-
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
@@ -89,6 +88,51 @@ public class CommandReader extends Thread
     // Reads and interprets a command
     private void readCommand(String message) throws IOException, UnsupportedAudioFileException, LineUnavailableException 
     {
+        int index = 0;
+        String indexString = "";
+        // Checks for indexes in the command "TODO effective but not the best way to do things"
+        if(message.length() > App.getMusicChangeCommand().length())
+        {
+            try
+            {
+                // Start at the first possable numeric index
+                // Collect all digits between here and the end of the string
+                for(int i = 13; i < App.getMusicChangeCommand().length(); i++)
+                {
+                    // Add to the index string
+                    indexString = indexString + message.charAt(i);
+                }
+                // Try parseing to a int
+                index = Integer.parseInt(indexString);
+                // Set message without the index
+                message = App.getMusicChangeCommand();
+            }
+            catch(NumberFormatException ex)
+            {
+                System.out.println("Not a number");
+            }
+        }
+        else if(message.length() > App.getEffectChangeCommand().length())
+        {
+            try
+            {
+                // Start at the first possable numeric index
+                // Collect all digits between here and the end of the string
+                for(int i = 14; i < App.getEffectChangeCommand().length(); i++)
+                {
+                    // Add to the index string
+                    indexString = indexString + message.charAt(i);
+                }
+                // Try parseing to a int
+                index = Integer.parseInt(indexString);
+                // Set message without the index
+                message = App.getEffectChangeCommand();
+            }
+            catch(NumberFormatException ex)
+            {
+                System.out.println("Not a number");
+            }
+        }
 
         // Checks what the command is and completes it
         if(message.equals(App.getMusicNextCommand()))
@@ -112,7 +156,8 @@ public class CommandReader extends Thread
         else if(message.equals(App.getMusicChangeCommand()))
         {
             // Changes to a specific music file TODO needs the file number to add
-            //AudioPlayer.changeMusicFile();
+            AudioPlayer.changeMusicFile(index);
+            System.out.println("Command: Change Music to " + index);
         }
         else if(message.equals(App.getEffectToggleCommand()))
         {
@@ -123,7 +168,8 @@ public class CommandReader extends Thread
         else if(message.equals(App.getEffectChangeCommand()))
         {
             // Changes to a specific effect file TODO Needs the file number to add
-            //AudioPlayer.changeEffectFile();
+            AudioPlayer.changeEffectFile(index);
+            System.out.println("Command: Change Effect to " + index);
         }
         else if(message.equals(App.getEnvNextCommand()))
         {
