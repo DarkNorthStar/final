@@ -54,7 +54,7 @@
                                        </font>
                                     </Label>
                                     <Button mnemonicParsing="false" text="&lt;" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <Button mnemonicParsing="false" text="&gt;" />
                                  </children>
                               </HBox>
@@ -66,7 +66,7 @@
                                        </font>
                                     </Label>
                                     <Button mnemonicParsing="false" text="&lt;" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <Button mnemonicParsing="false" text="&gt;" />
                                  </children>
                               </HBox>
@@ -124,6 +124,11 @@
                                     <TextField />
                                  </children>
                               </HBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="306.0" prefWidth="215.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="101.0" prefWidth="170.0" text="Save" />
+                                 </children>
+                              </VBox>
                            </children>
                         </VBox>
                         <VBox alignment="TOP_CENTER">
@@ -131,126 +136,126 @@
                               <HBox>
                                  <children>
                                     <Label text="Acrobatics" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="Animal handling" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="Arcana" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="Athletics" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="Deception" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="History" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="Insight" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="61.0">
                                  <children>
                                     <Label text="Intimidation" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0">
                                  <children>
                                     <Label text="Investigation" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="36.0">
                                  <children>
                                     <Label text="Medicine" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="87.0">
                                  <children>
                                     <Label text="Nature" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="61.0">
                                  <children>
                                     <Label text="Perception" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="87.0">
                                  <children>
                                     <Label text="Performance" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="112.0">
                                  <children>
                                     <Label text="Persuasion" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="112.0">
                                  <children>
                                     <Label text="Religion" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="112.0">
                                  <children>
                                     <Label text="Sleight of hand" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="420.0">
                                  <children>
                                     <Label text="Stealth" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="138.0">
                                  <children>
                                     <Label text="Survival" />
-                                    <TextField />
+                                    <TextField editable="false" />
                                     <CheckBox mnemonicParsing="false" text="Proficiency" />
                                  </children>
                               </HBox>
