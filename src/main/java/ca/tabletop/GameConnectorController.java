@@ -23,7 +23,7 @@ public class GameConnectorController
     @FXML
     public void connectToServer() throws IOException
     {   
-        /* // Trys to connect to a server
+        // Trys to connect to a server
         boolean connected = App.connectToServer(textFieldIp.getText().strip());
         // Check if the connection was sucessfull
         if(connected == true)
@@ -35,9 +35,9 @@ public class GameConnectorController
         {
             // If not output error message
             textErrorMessage.setText("FAILED TO CONNECT"); 
-        } */
+        }
 
-        App.setRoot("gamePlayer"); // TODO UNCOMMENT AND DELETE
+        //App.setRoot("gamePlayer"); // TODO UNCOMMENT AND DELETE
     }
     
 }

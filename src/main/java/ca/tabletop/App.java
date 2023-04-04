@@ -82,7 +82,11 @@ public class App extends Application
     //****************************************************/
     //                  CLIENT CONTROLS
     //****************************************************/
-    public static boolean connectToServer(String ip){return client.connectToServer(ip, DEFAULT_PORT);}
+    public static boolean connectToServer(String ip)
+    {
+        client = new Client();
+        return client.connectToServer(ip, DEFAULT_PORT);
+    }
     //****************************************************/
     //                  FXML FUNCTIONS
     //****************************************************/
