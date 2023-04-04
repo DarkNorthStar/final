@@ -166,7 +166,7 @@ public class AudioPlayer
          if(currentMusicFile > 0)
          {
             // Move the current music file tracker to the previous File.
-            currentMusicFile = currentMusicFile + 1;
+            currentMusicFile = currentMusicFile - 1;
 
             // Close the current Clip and AudioInputStream
             readyMusic.close();
