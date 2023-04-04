@@ -90,8 +90,9 @@ public class GameMasterController
     @FXML
     public void changeToNewMusic() throws IOException, UnsupportedAudioFileException, LineUnavailableException
     {
-        AudioPlayer.changeMusicFile(comboBoxMusic.getSelectionModel().getSelectedIndex());
-        App.sendToMusic();
+        int index = comboBoxMusic.getSelectionModel().getSelectedIndex();
+        AudioPlayer.changeMusicFile(index);
+        App.sendToMusic(index);
     }
 
 
@@ -110,8 +111,9 @@ public class GameMasterController
     @FXML
     public void changetoNewEffect() throws IOException, UnsupportedAudioFileException, LineUnavailableException
     {
-        AudioPlayer.changeEffectFile(comboBoxEffects.getSelectionModel().getSelectedIndex());
-        App.sendToEffect();   
+        int index = comboBoxEffects.getSelectionModel().getSelectedIndex();
+        AudioPlayer.changeEffectFile(index);
+        App.sendToEffect(index);   
     }
 
     //****************************************************/

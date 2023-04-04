@@ -80,9 +80,9 @@ public class App extends Application
     public static void sendNextMusic() throws IOException{server.sendCommand(MUSIC_NEXT_COMMAND);}
     public static void sendPreviousMusic() throws IOException{server.sendCommand(MUSIC_PREVIOUS_COMMAND);}
     public static void sendToggleMusic() throws IOException{server.sendCommand(MUSIC_TOGGLE_COMMAND);}
-    public static void sendToMusic() throws IOException{server.sendCommand(MUSIC_CHANGE_COMMAND + AudioPlayer.getCurrentMusicFile());}
+    public static void sendToMusic(int index) throws IOException{server.sendCommand(MUSIC_CHANGE_COMMAND + index);}
     public static void sendToggleEffect() throws IOException{server.sendCommand(EFFECT_TOGGLE_COMMAND);}
-    public static void sendToEffect() throws IOException{server.sendCommand(App.getEffectChangeCommand() + AudioPlayer.getCurrentEffectFile());}
+    public static void sendToEffect(int index) throws IOException{server.sendCommand(App.getEffectChangeCommand() + index);}
 
     //****************************************************/
     //                  CLIENT CONTROLS
