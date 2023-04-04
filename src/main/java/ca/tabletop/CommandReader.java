@@ -95,16 +95,19 @@ public class CommandReader extends Thread
         {
             // Move to the next music file
             AudioPlayer.next();
+            System.out.println("Command: Next Music");
         }
         else if(message.equals(App.getMusicPreviousCommand()))
         {
             // Moves to the previous music file
             AudioPlayer.previous();
+            System.out.println("Command: Previous Music");
         }
         else if(message.equals(App.getMusicToggleCommand()))
         {
             // Toggles effect playing
-            AudioPlayer.pausePlayEffect();
+            AudioPlayer.pausePlayMusic();
+            System.out.println("Command: Pause Play Music");
         }
         else if(message.equals(App.getMusicChangeCommand()))
         {
@@ -115,6 +118,7 @@ public class CommandReader extends Thread
         {
             // Toggles effect playing
             AudioPlayer.pausePlayEffect();
+            System.out.println("Command: Pause Play Effect");
         }
         else if(message.equals(App.getEffectChangeCommand()))
         {
@@ -125,11 +129,13 @@ public class CommandReader extends Thread
         {
             // Moves to the next environment file
             SlideShow.nextEnvironment();
+            System.out.println("Command: Next Environment");
         }
         else if(message.equals(App.getEnvPreviousCommand()))
         {
             // Moves to the next environment file
             SlideShow.previousEnvironment();
+            System.out.println("Command: Previous Environment");
         }
     }
     
