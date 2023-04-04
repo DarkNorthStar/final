@@ -16,38 +16,35 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 /**
  * JavaFX App
  */
-public class App extends Application 
+public class App extends Application
 {
     //****************************************************/
     //                  CONSTANTS
     //****************************************************/
+    // Server Constants
     private static final int DEFAULT_PORT = 5969;
-
     // Command Constants
-    final private static String MUSIC_NEXT_COMMAND = "?music-next";
-    final private static String MUSIC_PREVIOUS_COMMAND = "?music-previous";
-    final private static String MUSIC_TOGGLE_COMMAND = "?music-toggle";
-    final private static String MUSIC_CHANGE_COMMAND = "?music-change";
-    final private static String EFFECT_TOGGLE_COMMAND = "?effect-toggle";
-    final private static String EFFECT_CHANGE_COMMAND = "?effect-change";
-    final private static String ENV_NEXT_COMMAND = "?env-next";
-    final private static String ENV_PREVIOUS_COMMAND = "?env-previous";
+    private static final String MUSIC_NEXT_COMMAND = "?music-next";
+    private static final String MUSIC_PREVIOUS_COMMAND = "?music-previous";
+    private static final String MUSIC_TOGGLE_COMMAND = "?music-toggle";
+    private static final String MUSIC_CHANGE_COMMAND = "?music-change";
+    private static final String EFFECT_TOGGLE_COMMAND = "?effect-toggle";
+    private static final String EFFECT_CHANGE_COMMAND = "?effect-change";
+    private static final String ENV_NEXT_COMMAND = "?env-next";
+    private static final String ENV_PREVIOUS_COMMAND = "?env-previous";
 
     //****************************************************/
     //                  VARIABLES
     //****************************************************/
     private static Scene scene; // The main window
-
-    // The collections of files that are loaded into the system
+    // Collections of files that are loaded into the system
     private static List<File> musicFiles = FileManager.loadMusicFiles(); // music
     private static List<File> effectFiles = FileManager.loadEffectFiles(); // effect
     private static List<File> imageFiles = FileManager.loadImageFiles(); // images
-
-    
-    private static Server server;
+    // Server Client Variables
+    private static Server server; // Server for game master instances
     //private static int numberOfPlayers = 0;
-
-    private static Client client;
+    private static Client client; // Client for game player instances
 
     // Functions called when game master is launched
     public static void startGameMaster() throws IOException, UnsupportedAudioFileException, LineUnavailableException
@@ -85,10 +82,7 @@ public class App extends Application
     //****************************************************/
     //                  CLIENT CONTROLS
     //****************************************************/
-    public static boolean connectToServer(String ip)
-    {
-        return client.connectToServer(ip, DEFAULT_PORT);
-    }
+    public static boolean connectToServer(String ip){return client.connectToServer(ip, DEFAULT_PORT);}
     //****************************************************/
     //                  FXML FUNCTIONS
     //****************************************************/
@@ -115,23 +109,13 @@ public class App extends Application
     //****************************************************/
     //                  GETTERS
     //****************************************************/
-    // function that returns the music files in the system
-    public static List<File> getMusicFiles()
-    {
-        return musicFiles;
-    }
+    // Function that returns the music files in the system
+    public static List<File> getMusicFiles(){return musicFiles;}
     // Function that returns the effect files in the system
-    public static List<File> getEffectFiles()
-    {
-        return effectFiles;
-    }
+    public static List<File> getEffectFiles(){return effectFiles;}
     // function that returns the image files in the system
-    public static List<File> getImageFiles()
-    {
-        return imageFiles;
-    }
-
-    // Command constants
+    public static List<File> getImageFiles(){return imageFiles;}
+    // Command Getters
     public static String getMusicNextCommand(){return MUSIC_NEXT_COMMAND;}
     public static String getMusicPreviousCommand(){return MUSIC_PREVIOUS_COMMAND;}
     public static String getMusicToggleCommand(){return MUSIC_TOGGLE_COMMAND;}
@@ -144,8 +128,7 @@ public class App extends Application
     //****************************************************/
     //                  SETTERS
     //****************************************************/
-    // File access functions
-    // Function to add a music file to the system
+    // Function to adds a music file to the system
     public static File addMusic()
     {
         // add the file to the list of files
@@ -153,13 +136,13 @@ public class App extends Application
         // Return the last file added
         return musicFiles.get(musicFiles.size()-1);
     }
-    // Function to add a effect file to the system
+    // Function to adds a effect file to the system
     public static File addEffect()
     {
         effectFiles = FileManager.addEffectFile(effectFiles);
         return effectFiles.get(musicFiles.size()-1);
     }
-    // Function to add a image file to the system
+    // Function to adds a image file to the system
     public static File addImage()
     {
         imageFiles = FileManager.addImageFile(effectFiles);
