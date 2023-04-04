@@ -33,7 +33,7 @@ public class GamePlayerController
     @FXML
     protected void initialize() throws UnsupportedAudioFileException, IOException, LineUnavailableException
     {
-        App.startGameMaster();
+        App.startGamePlayer();
 
         // Get the number of images in the system from App
         numberOfImages = SlideShow.getNumberOfImages();
