@@ -22,7 +22,7 @@ public class CommandReader extends Thread
     //                  PUBLIC FUNCTIONS
     //****************************************************/
     // Contructor
-    public CommandReader(){}
+    public CommandReader(GamePlayerController gamePlayerController){ controller = gamePlayerController;}
    
 
     // Starts the commandReader thread

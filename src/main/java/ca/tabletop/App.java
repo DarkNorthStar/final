@@ -56,14 +56,14 @@ public class App extends Application
 
         SlideShow.readyImages(imageFiles);
     }
-    public static void startGamePlayer() throws UnsupportedAudioFileException, IOException, LineUnavailableException
+    public static void startGamePlayer(GamePlayerController controller) throws UnsupportedAudioFileException, IOException, LineUnavailableException
     {
         // Loads the music and effect files into the audio player
         AudioPlayer.readyAudioPlayer(musicFiles, effectFiles);
 
         SlideShow.readyImages(imageFiles);
 
-        CommandReader commandReader = new CommandReader();
+        CommandReader commandReader = new CommandReader(controller);
         commandReader.start();
     }
 
