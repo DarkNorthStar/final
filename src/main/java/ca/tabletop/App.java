@@ -62,6 +62,9 @@ public class App extends Application
         AudioPlayer.readyAudioPlayer(musicFiles, effectFiles);
 
         SlideShow.readyImages(imageFiles);
+
+        CommandReader commandReader = new CommandReader();
+        commandReader.start();
     }
 
     //****************************************************/

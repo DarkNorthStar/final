@@ -40,9 +40,6 @@ public class GamePlayerController
 
         // Set the environment image to the current image
         imageViewEnvironment.setImage(SlideShow.getEnvironmentImage(0));
-
-        CommandReader commandReader = new CommandReader(this);
-        commandReader.start();
     }
 
     //****************************************************/
