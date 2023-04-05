@@ -33,7 +33,7 @@
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Label text="Character name:" HBox.hgrow="ALWAYS">
+                                    <Label prefWidth="130.0" text="Character name:" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
@@ -43,7 +43,7 @@
                               </HBox>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Label text="Class:" HBox.hgrow="ALWAYS">
+                                    <Label prefWidth="120.0" text="Class:" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
@@ -53,7 +53,7 @@
                               </HBox>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Label text="level" HBox.hgrow="ALWAYS">
+                                    <Label prefWidth="130.0" text="level" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
@@ -63,7 +63,7 @@
                               </HBox>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Label text="alignment" HBox.hgrow="ALWAYS">
+                                    <Label prefWidth="130.0" text="alignment" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
@@ -73,12 +73,18 @@
                               </HBox>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Label text="xp" HBox.hgrow="ALWAYS">
+                                    <Label prefWidth="130.0" text="xp" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
                                     </Label>
                                     <TextField fx:id="xpInput" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Max HP" />
+                                    <TextField fx:id="hpInput" />
                                  </children>
                               </HBox>
                               <Label text="Bio" />
@@ -121,12 +127,6 @@
                                  <children>
                                     <Label text="Charisma" />
                                     <TextField fx:id="charismaInput" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER">
-                                 <children>
-                                    <Label text="Max HP" />
-                                    <TextField fx:id="hpInput" />
                                  </children>
                               </HBox>
                               <VBox alignment="CENTER" prefHeight="306.0" prefWidth="215.0">

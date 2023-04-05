@@ -11,7 +11,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.GameConnectorController">
    <children>
-      <Label prefHeight="258.0" prefWidth="1227.0" text="Connect to a game" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+      <Label alignment="CENTER" prefHeight="258.0" prefWidth="1227.0" text="Connect to a game" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
          <font>
             <Font name="Felix Titling" size="96.0" />
          </font></Label>

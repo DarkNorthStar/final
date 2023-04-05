@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="BOTTOM_LEFT" fillWidth="false" prefHeight="926.0" prefWidth="1163.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.GameMasterController">
+<VBox alignment="CENTER" fillWidth="false" prefHeight="926.0" prefWidth="1163.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.GameMasterController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -61,7 +61,10 @@
                   </Label>
                   <ListView fx:id="listViewPlayers" />
                   <TextField fx:id="textFieldMessage" promptText="Send a message to the selected player" />
-                  <Button mnemonicParsing="false" onAction="#sendMessageToPlayer" text="Send" />
+                  <Button mnemonicParsing="false" onAction="#sendMessageToPlayer" text="Send">
+                     <font>
+                        <Font name="Felix Titling" size="12.0" />
+                     </font></Button>
                </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
@@ -88,32 +91,56 @@
          <children>
             <VBox alignment="TOP_CENTER">
                <children>
-                  <Label text="Quests" />
+                  <Label text="Quests">
+                     <font>
+                        <Font name="Felix Titling" size="18.0" />
+                     </font></Label>
                   <HBox>
                      <children>
-                        <Label text="Title" />
+                        <Label prefHeight="18.0" prefWidth="38.0" text="Title">
+                           <font>
+                              <Font name="Felix Titling" size="14.0" />
+                           </font></Label>
                         <TextField fx:id="textFieldQuestTitle" prefHeight="26.0" prefWidth="241.0" promptText="Enter the quests title" />
                         <ComboBox fx:id="comboBoxQuests" prefHeight="26.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" text="Delete" />
+                        <Button mnemonicParsing="false" text="Delete">
+                           <font>
+                              <Font name="Felix Titling" size="12.0" />
+                           </font></Button>
                      </children>
                   </HBox>
                   <HBox>
                      <children>
-                        <Label text="Details" />
+                        <Label text="Details">
+                           <font>
+                              <Font name="Felix Titling" size="14.0" />
+                           </font></Label>
                         <TextArea fx:id="textFieldQuestDescription" promptText="Enter any details to the quest" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" onAction="#addQuest" text="Add Quest" />
+                  <Button mnemonicParsing="false" onAction="#addQuest" text="Add Quest">
+                     <font>
+                        <Font name="Felix Titling" size="12.0" />
+                     </font></Button>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="378.0">
+            <VBox alignment="TOP_CENTER" prefHeight="128.0" prefWidth="510.0">
                <children>
-                  <Label text="Events" />
+                  <Label text="Events">
+                     <font>
+                        <Font name="Felix Titling" size="18.0" />
+                     </font></Label>
                   <HBox>
                      <children>
-                        <Label text="Event" />
-                        <TextField fx:id="textFieldEvent" prefHeight="26.0" prefWidth="261.0" promptText="Enter a event to broadcast to players" />
-                        <Button mnemonicParsing="false" text="Add Event" />
+                        <Label text="Event">
+                           <font>
+                              <Font name="Felix Titling" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="textFieldEvent" prefHeight="26.0" prefWidth="338.0" promptText="Enter a event to broadcast to players" />
+                        <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="94.0" text="Add Event">
+                           <font>
+                              <Font name="Felix Titling" size="12.0" />
+                           </font></Button>
                      </children>
                      <padding>
                         <Insets left="10.0" />
@@ -167,9 +194,9 @@
             </Button>
             <HBox alignment="CENTER_RIGHT" prefHeight="206.0" prefWidth="351.0">
                <children>
-                  <TextArea fx:id="textAreaDice" prefHeight="178.0" prefWidth="206.0">
+                  <TextArea fx:id="textAreaDice" editable="false" prefHeight="178.0" prefWidth="206.0">
                      <font>
-                        <Font size="64.0" />
+                        <Font name="Felix Titling" size="64.0" />
                      </font></TextArea>
                </children>
             </HBox>
