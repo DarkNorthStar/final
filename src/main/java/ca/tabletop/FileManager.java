@@ -32,7 +32,7 @@ public class FileManager
     private static final String EFFECT_FILETYPE = "E"; // The effect filetype
 
     //****************************************************/
-    //                  LOAD FUNCTIONS
+    //                  LOAD FILE FUNCTIONS
     //****************************************************/
     /**Collects and returns all music files.
      * Collects all of the music files found in the music folder

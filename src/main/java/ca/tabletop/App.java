@@ -135,7 +135,7 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException, SQLException 
     {
-        scene = new Scene(loadFXML("mainMenu"), 1280, 720);
+        scene = new Scene(loadFXML("mainMenu"), 1280, 900);
         stage.setScene(scene);
         stage.show();
         tabletopDatabase = new TabletopDatabase();

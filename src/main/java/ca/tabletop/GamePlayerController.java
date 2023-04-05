@@ -53,16 +53,22 @@ public class GamePlayerController
     {
         textAreaEvents.setText(textAreaEvents.getText() + "\n" + event);
     }
-
+    //****************************************************/
+    //                  INVENTORY
+    //****************************************************/
+    public void addItemToInventory()
+    {
+        //Item item = new item();
+    }
     //****************************************************/
     //                  UTILITY
     //****************************************************/
-    // Mutes the audioPlayer
+    /* // Mutes the audioPlayer
     @FXML
     public void mute()
     {
-        //TODO ADD MUTE
-    }
+        //CUT
+    } */
 
     //****************************************************/
     //                  DICE
