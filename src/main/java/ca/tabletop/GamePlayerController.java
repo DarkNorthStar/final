@@ -88,6 +88,13 @@ public class GamePlayerController
             System.out.println(ex.getMessage());
         }
     }
+    public void deleteItem()
+    {
+        int index = listViewInventory.getSelectionModel().getSelectedIndex();
+        listViewInventory.getItems().remove(index);
+
+        // TODO Remove from database
+    }
     //****************************************************/
     //                  UTILITY
     //****************************************************/
