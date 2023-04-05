@@ -89,7 +89,7 @@
       </HBox>
       <HBox>
          <children>
-            <VBox alignment="TOP_CENTER">
+            <VBox alignment="CENTER">
                <children>
                   <Label text="Quests">
                      <font>
@@ -102,8 +102,8 @@
                               <Font name="Felix Titling" size="14.0" />
                            </font></Label>
                         <TextField fx:id="textFieldQuestTitle" prefHeight="26.0" prefWidth="241.0" promptText="Enter the quests title" />
-                        <ComboBox fx:id="comboBoxQuests" prefHeight="26.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" text="Delete">
+                        <ComboBox fx:id="comboBoxQuests" disable="true" prefHeight="26.0" prefWidth="200.0" />
+                        <Button disable="true" mnemonicParsing="false" text="Delete">
                            <font>
                               <Font name="Felix Titling" size="12.0" />
                            </font></Button>
@@ -130,7 +130,7 @@
                      <font>
                         <Font name="Felix Titling" size="18.0" />
                      </font></Label>
-                  <HBox>
+                  <HBox alignment="CENTER">
                      <children>
                         <Label text="Event">
                            <font>

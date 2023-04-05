@@ -34,12 +34,12 @@
                   <Font name="Felix Titling" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="hpInput" maxWidth="100.0" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="hpInput" alignment="CENTER" maxWidth="100.0" prefHeight="25.0" prefWidth="100.0" />
             <HBox alignment="CENTER">
                <children>
                   <VBox alignment="CENTER">
                      <children>
-                        <Label text="Traites">
+                        <Label text="traits">
                            <font>
                               <Font name="Felix Titling" size="24.0" />
                            </font></Label>
