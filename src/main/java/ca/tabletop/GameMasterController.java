@@ -69,15 +69,18 @@ public class GameMasterController
         textFieldQuestTitle.clear();
         textFieldQuestDescription.clear();
     }
-    @FXML
+    /* @FXML
     public void deleteQuest()
     {
-        //TODO ADD DELETE FOR QUESTS
-    }
+        //Cut
+    } */
     @FXML
-    public void sendEvent()
+    public void sendEvent() throws IOException
     {
-        
+        String event = textFieldEvent.getText();
+        App.sendEvent(event);
+
+        // TODO add event to game log
     }
     //****************************************************/
     //                  MUSIC
