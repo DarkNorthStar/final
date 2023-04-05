@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.NPCCreatorController">
    <children>
@@ -15,6 +16,11 @@
          <font>
             <Font name="Felix Titling" size="64.0" />
          </font></Label>
+      <Text fx:id="errorMessage" fill="#bf1c1c" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
       <HBox alignment="TOP_CENTER">
          <children>
             <VBox alignment="TOP_CENTER">
@@ -67,6 +73,16 @@
                            </font>
                         </Label>
                         <TextField prefHeight="26.0" prefWidth="150.0" fx:id="xpInput" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label prefWidth="130.0" text="Max HP">
+                           <font>
+                              <Font name="Felix Titling" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="hpInput" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <Label text="Bio">
@@ -141,12 +157,12 @@
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="306.0" prefWidth="215.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#save" prefHeight="101.0" prefWidth="170.0" text="Save">
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#save" prefHeight="101.0" prefWidth="170.0" text="Save">
                            <font>
                               <Font name="Felix Titling" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#returnGameCreator" prefHeight="101.0" prefWidth="170.0" text="Return to Game Creator" textAlignment="CENTER" wrapText="true">
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#returnGameCreator" prefHeight="101.0" prefWidth="170.0" text="Return to Game Creator" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Felix Titling" size="18.0" />
                            </font>

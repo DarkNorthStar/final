@@ -22,7 +22,7 @@ public class GameConnectorController
     // Attempts to connect to a server
     @FXML public void connectToServer() throws IOException
     {   
-        // Trys to connect to a game masters server using the typed in local ip
+        /* // Trys to connect to a game masters server using the typed in local ip
         boolean connected = App.connectToServer(textFieldIp.getText().strip());
 
         // Check if the connection was sucessfull
@@ -35,8 +35,8 @@ public class GameConnectorController
         {
             // If not output error message to the screen
             textErrorMessage.setText("FAILED TO CONNECT"); 
-        }
+        } */
 
-        //App.setRoot("gamePlayer"); // TODO uncomment AND comment the rest of connectToServer(). This is used to access the game player without a connection.
+        App.setRoot("gamePlayer"); // TODO uncomment AND comment the rest of connectToServer(). This is used to access the game player without a connection.
     }
 }

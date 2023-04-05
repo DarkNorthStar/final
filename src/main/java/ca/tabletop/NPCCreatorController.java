@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class NPCCreatorController 
 {
@@ -24,6 +25,8 @@ public class NPCCreatorController
     @FXML TextField wisdomInput;
     @FXML TextField charismaInput;
     @FXML TextField hpInput;
+
+    @FXML Text errorMessage;
 
     private boolean newCharacter = true;
 
@@ -45,12 +48,18 @@ public class NPCCreatorController
     }
     private void saveNew() throws SQLException, IOException
     {
+        try{
         Character character = new Character(characterNameInput.getText(), classInput.getText(), Integer.parseInt(levelInput.getText()), alignmentInput.getText(), Integer.parseInt(xpInput.getText()), Integer.parseInt(hpInput.getText()),
         bioInput.getText(), Integer.parseInt(strengthInput.getText()), Integer.parseInt(dexterityInput.getText()), Integer.parseInt(constitutionInput.getText()), Integer.parseInt(intelligenceInput.getText()), Integer.parseInt(wisdomInput.getText()), Integer.parseInt(charismaInput.getText()));
 
         App.setNPC(character);
 
         App.setRoot("mainMenu");
+        }
+        catch(Exception ex)
+        {
+            errorMessage.setText("INVALID DATA");
+        }
     }
 
     // Returns the application to the game creator

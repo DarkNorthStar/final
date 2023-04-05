@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class MonsterCreatorController 
 {
@@ -14,6 +15,9 @@ public class MonsterCreatorController
     @FXML TextField hpInput;
     @FXML TextArea traitsInput;
     @FXML TextArea bioInput;
+
+    @FXML Text errorMessage;
+
 
     private boolean newCharacter = true;
 
@@ -35,11 +39,18 @@ public class MonsterCreatorController
     }
     private void saveNew() throws SQLException, IOException
     {
-        Monster monster = new Monster(monsterNameInput.getText(), Integer.parseInt(hpInput.getText()), traitsInput.getText(), bioInput.getText());
+        try
+        {
+            Monster monster = new Monster(monsterNameInput.getText(), Integer.parseInt(hpInput.getText()), traitsInput.getText(), bioInput.getText());
 
-        App.setMonster(monster);
+            App.setMonster(monster);
 
-        App.setRoot("mainMenu");
+            App.setRoot("mainMenu");
+        }
+        catch(Exception ex)
+        {
+            errorMessage.setText("INVALID DATA");
+        }
     }
 
     // Returns the application to the game creator
