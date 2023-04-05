@@ -97,6 +97,10 @@ public class App extends Application
     {
         tabletopDatabase.setMonster(monster);
     }
+    public static void addQuest(Quest quest) throws SQLException
+    {
+        tabletopDatabase.addQuest(quest);
+    }
     //****************************************************/
     //                  SERVER CONTROLS
     //****************************************************/
@@ -111,6 +115,7 @@ public class App extends Application
     public static void sendToMusic(int index) throws IOException{server.sendCommand(MUSIC_CHANGE_COMMAND + index);}
     public static void sendToggleEffect() throws IOException{server.sendCommand(EFFECT_TOGGLE_COMMAND);}
     public static void sendToEffect(int index) throws IOException{server.sendCommand(EFFECT_CHANGE_COMMAND + index);}
+    public static void sendQuest(Quest quest) throws IOException{server.sendCommand("Q/"+ quest.toString());}
 
     //****************************************************/
     //                  CLIENT CONTROLS

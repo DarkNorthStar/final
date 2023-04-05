@@ -92,27 +92,27 @@
                   <HBox>
                      <children>
                         <Label text="Title" />
-                        <TextField fx:id="textFieldQuestTitle" />
-                        <ComboBox fx:id="comboBoxQuests" prefWidth="150.0" />
+                        <TextField fx:id="textFieldQuestTitle" prefHeight="26.0" prefWidth="241.0" promptText="Enter the quests title" />
+                        <ComboBox fx:id="comboBoxQuests" prefHeight="26.0" prefWidth="200.0" />
                         <Button mnemonicParsing="false" text="Delete" />
                      </children>
                   </HBox>
                   <HBox>
                      <children>
                         <Label text="Details" />
-                        <TextField fx:id="textFieldQuestDescription" />
+                        <TextArea fx:id="textFieldQuestDescription" promptText="Enter any details to the quest" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" text="Add Quest" />
+                  <Button mnemonicParsing="false" onAction="#addQuest" text="Add Quest" />
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER">
+            <VBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="378.0">
                <children>
                   <Label text="Events" />
                   <HBox>
                      <children>
                         <Label text="Event" />
-                        <TextField fx:id="textFieldEvent" />
+                        <TextField fx:id="textFieldEvent" prefHeight="26.0" prefWidth="261.0" promptText="Enter a event to broadcast to players" />
                         <Button mnemonicParsing="false" text="Add Event" />
                      </children>
                      <padding>

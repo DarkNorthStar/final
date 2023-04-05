@@ -33,7 +33,7 @@ public class GameMasterController
     
     //@FXML private ComboBox<Quest> comboBoxQuests;
     @FXML private TextField textFieldQuestTitle;
-    @FXML private TextField textFieldQuestDescription;
+    @FXML private TextArea textFieldQuestDescription;
     @FXML private TextField textFieldEvent;
 
     //****************************************************/
@@ -55,6 +55,30 @@ public class GameMasterController
         imageViewEnvironment.setImage(SlideShow.getEnvironmentImage(0)); // Sets the slideshow image to the first
     };
 
+    //****************************************************/
+    //                  QUESTS AND EVENTS
+    //****************************************************/
+    @FXML
+    public void addQuest() throws IOException, SQLException
+    {
+        Quest quest = new Quest(textFieldQuestTitle.getText(), textFieldQuestDescription.getText());
+
+        App.addQuest(quest);
+        App.sendQuest(quest);
+
+        textFieldQuestTitle.clear();
+        textFieldQuestDescription.clear();
+    }
+    @FXML
+    public void deleteQuest()
+    {
+        //TODO ADD DELETE FOR QUESTS
+    }
+    @FXML
+    public void sendEvent()
+    {
+        
+    }
     //****************************************************/
     //                  MUSIC
     //****************************************************/

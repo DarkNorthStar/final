@@ -18,6 +18,8 @@ public class GamePlayerController
     //****************************************************/
     @FXML private ImageView imageViewEnvironment;
     @FXML private TextArea textAreaMessages;
+    @FXML private TextArea textAreaQuests;
+    @FXML private TextArea textAreaEvents;
     @FXML private TextArea textAreaDice;
 
     //****************************************************/
@@ -42,6 +44,14 @@ public class GamePlayerController
     public void setTextAreaMessages(String message) 
     {
         textAreaMessages.setText(message);
+    }
+    public void setTextAreaQuests(String quest)
+    {
+        textAreaQuests.setText(quest);
+    }
+    public void addTotextAreaEvents(String event)
+    {
+        textAreaEvents.setText(textAreaEvents.getText() + "\n" + event);
     }
 
     //****************************************************/

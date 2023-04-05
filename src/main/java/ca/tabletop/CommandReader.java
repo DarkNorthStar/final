@@ -56,6 +56,14 @@ public class CommandReader extends Thread
                         System.out.println("FAILED TO READ THE COMMAND");
                     }
                 }
+                else if(message.charAt(0) == 'Q' && message.charAt(1) == '/')
+                {
+                    controller.setTextAreaQuests(message);
+                }
+                else if(message.charAt(0) == 'E' && message.charAt(1) == '/')
+                {
+                    controller.addTotextAreaEvents(message);
+                }
                 else
                 {
                     System.out.println("MESSAGE");

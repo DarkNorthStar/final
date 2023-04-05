@@ -99,4 +99,13 @@ public class TabletopDatabase
 
         preparedSetMonster.executeUpdate();
     }
+
+    public void addQuest(Quest quest) throws SQLException
+    {
+        String addQuestStatment = "INSERT INTO Quests(title, details) VALUES(?,?)";
+        PreparedStatement preparedAddQuest = connection.prepareStatement(addQuestStatment);
+        preparedAddQuest.setString(1, quest.getTitle());
+        preparedAddQuest.setString(2, quest.getDetails());
+        preparedAddQuest.executeUpdate();   
+    }
 }
