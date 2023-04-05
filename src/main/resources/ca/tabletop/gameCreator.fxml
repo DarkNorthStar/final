@@ -4,11 +4,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.GameCreatorController">
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.GameCreatorController">
     <children>
         <Label text="Game Creator">
          <font>
@@ -74,13 +75,26 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
+            <Button mnemonicParsing="false" onAction="#openCharacterCreator" prefHeight="75.0" prefWidth="140.0" text="Character">
+               <font>
+                  <Font name="Felix Titling" size="17.0" />
+               </font>
+            </Button>
+            <TextField prefHeight="57.0" prefWidth="150.0" promptText="Character ID" />
             <HBox alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#openCharacterCreator" prefHeight="88.0" prefWidth="432.0" text="Character">
+                  <Button mnemonicParsing="false" onAction="#openNPCreator" prefHeight="75.0" prefWidth="140.0" text="NPC">
                      <font>
                         <Font name="Felix Titling" size="17.0" />
                      </font>
                   </Button>
+                  <TextField prefHeight="57.0" prefWidth="150.0" promptText="NPC ID" />
+                  <Button mnemonicParsing="false" onAction="#openMonsterCreator" prefHeight="75.0" prefWidth="140.0" text="Monster">
+                     <font>
+                        <Font name="Felix Titling" size="17.0" />
+                     </font>
+                  </Button>
+                  <TextField prefHeight="57.0" prefWidth="150.0" promptText="Monster ID" />
                </children>
             </HBox>
             <HBox alignment="CENTER">

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -46,9 +47,10 @@ public class App extends Application
     // Server / Client Variables
     private static Server server; // Server for game master instances
     private static Client client; // Client for game player instances
+    private static TabletopDatabase tabletopDatabase; // Database
 
     // Functions called when game master is launched
-    public static void startGameMaster() throws IOException, UnsupportedAudioFileException, LineUnavailableException
+    public static void startGameMaster() throws IOException, UnsupportedAudioFileException, LineUnavailableException, SQLException
     {
         // Starts the server for the game master to send messages to connected instances of game players
         server = new Server(DEFAULT_PORT);
@@ -58,7 +60,7 @@ public class App extends Application
         SlideShow.readyImages(imageFiles);
     }
     // Function called when the game player is launched. used to load the data needed for the game player
-    public static void startGamePlayer(GamePlayerController controller) throws UnsupportedAudioFileException, IOException, LineUnavailableException
+    public static void startGamePlayer(GamePlayerController controller) throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException
     {
         // Loads the music and effect files into the audio player to be played
         AudioPlayer.readyAudioPlayer(musicFiles, effectFiles);
@@ -68,7 +70,33 @@ public class App extends Application
         CommandReader commandReader = new CommandReader(controller);
         commandReader.start();
     }
-
+    //****************************************************/
+    //                  DATABASE CONTROLS
+    //****************************************************/
+    public static Character getCharacter(int id) throws SQLException
+    {
+        return tabletopDatabase.getCharacter(id);
+    }
+    public static void setCharacter(Character character) throws SQLException
+    {
+        tabletopDatabase.setCharacter(character);
+    }
+    public static Character getNPC(int id) throws SQLException
+    {
+        return tabletopDatabase.getNPC(id);
+    }
+    public static void setNPC(Character character) throws SQLException
+    {
+        tabletopDatabase.setNPC(character);
+    }
+    public static Monster getMonster(int id) throws SQLException
+    {
+        return tabletopDatabase.getMonster(id);
+    }
+    public static void setMonster(Monster monster) throws SQLException
+    {
+        tabletopDatabase.setMonster(monster);
+    }
     //****************************************************/
     //                  SERVER CONTROLS
     //****************************************************/
@@ -100,11 +128,12 @@ public class App extends Application
     //****************************************************/
     // Startup  function
     @Override
-    public void start(Stage stage) throws IOException 
+    public void start(Stage stage) throws IOException, SQLException 
     {
         scene = new Scene(loadFXML("mainMenu"), 1280, 720);
         stage.setScene(scene);
         stage.show();
+        tabletopDatabase = new TabletopDatabase();
     }
     // Sets the root fxml document of the main window
     public static void setRoot(String fxml) throws IOException {

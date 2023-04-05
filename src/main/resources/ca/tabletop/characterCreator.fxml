@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
@@ -11,13 +10,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.MainMenuController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.CharacterCreatorController">
    <children>
       <Label contentDisplay="CENTER" text="Character Creator" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
          <font>
             <Font name="Felix Titling" size="64.0" />
          </font></Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
       <ScrollPane>
         <content>
           <AnchorPane prefHeight="462.0" prefWidth="1341.0">
@@ -33,7 +38,7 @@
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextField />
+                                    <TextField fx:id="characterNameInput" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER">
@@ -43,7 +48,7 @@
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextField prefHeight="12.0" prefWidth="100.0" />
+                                    <TextField fx:id="classInput" prefHeight="12.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER">
@@ -53,9 +58,7 @@
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" text="&lt;" />
-                                    <TextField editable="false" />
-                                    <Button mnemonicParsing="false" text="&gt;" />
+                                    <TextField fx:id="levelInput" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER">
@@ -65,9 +68,7 @@
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" text="&lt;" />
-                                    <TextField editable="false" />
-                                    <Button mnemonicParsing="false" text="&gt;" />
+                                    <TextField fx:id="alignmentInput" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER">
@@ -77,13 +78,11 @@
                                           <Font name="Felix Titling" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" text="&lt;" />
-                                    <TextField />
-                                    <Button mnemonicParsing="false" text="&gt;" />
+                                    <TextField fx:id="xpInput" />
                                  </children>
                               </HBox>
                               <Label text="Bio" />
-                              <TextArea prefHeight="296.0" prefWidth="478.0" />
+                              <TextArea fx:id="bioInput" prefHeight="296.0" prefWidth="478.0" />
                            </children>
                         </VBox>
                         <VBox alignment="TOP_CENTER">
@@ -91,174 +90,51 @@
                               <HBox>
                                  <children>
                                     <Label text="Strength" />
-                                    <TextField />
+                                    <TextField fx:id="strengthInput" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
                                     <Label text="Dexterity" />
-                                    <TextField />
+                                    <TextField fx:id="dexterityInput" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
                                     <Label text="Constitution" />
-                                    <TextField />
+                                    <TextField fx:id="constitutionInput" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
                                     <Label text="Intelligence" />
-                                    <TextField />
+                                    <TextField fx:id="intelligenceInput" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
                                     <Label text="Wisdom" />
-                                    <TextField />
+                                    <TextField fx:id="wisdomInput" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
                                     <Label text="Charisma" />
-                                    <TextField />
+                                    <TextField fx:id="charismaInput" />
                                  </children>
                               </HBox>
-                              <VBox alignment="BOTTOM_CENTER" prefHeight="306.0" prefWidth="215.0">
+                              <HBox alignment="CENTER">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="101.0" prefWidth="170.0" text="Save" />
+                                    <Label text="Max HP" />
+                                    <TextField fx:id="hpInput" />
+                                 </children>
+                              </HBox>
+                              <VBox alignment="CENTER" prefHeight="306.0" prefWidth="215.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#save" prefHeight="101.0" prefWidth="170.0" text="Save" />
+                                    <Button mnemonicParsing="false" onAction="#returnGameCreator" prefHeight="101.0" prefWidth="170.0" text="Return to Game Creator" />
                                  </children>
                               </VBox>
-                           </children>
-                        </VBox>
-                        <VBox alignment="TOP_CENTER">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Label text="Acrobatics" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="Animal handling" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="Arcana" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="Athletics" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="Deception" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="History" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="Insight" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="61.0">
-                                 <children>
-                                    <Label text="Intimidation" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0">
-                                 <children>
-                                    <Label text="Investigation" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="36.0">
-                                 <children>
-                                    <Label text="Medicine" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="87.0">
-                                 <children>
-                                    <Label text="Nature" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="61.0">
-                                 <children>
-                                    <Label text="Perception" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="87.0">
-                                 <children>
-                                    <Label text="Performance" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="112.0">
-                                 <children>
-                                    <Label text="Persuasion" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="112.0">
-                                 <children>
-                                    <Label text="Religion" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="112.0">
-                                 <children>
-                                    <Label text="Sleight of hand" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="420.0">
-                                 <children>
-                                    <Label text="Stealth" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="138.0">
-                                 <children>
-                                    <Label text="Survival" />
-                                    <TextField editable="false" />
-                                    <CheckBox mnemonicParsing="false" text="Proficiency" />
-                                 </children>
-                              </HBox>
                            </children>
                         </VBox>
                      </children>

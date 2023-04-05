@@ -66,4 +66,13 @@ public class GameCreatorController
     {
         App.setRoot("characterCreator");
     }
+    @FXML
+    private void openNPCreator() throws IOException
+    {
+        App.setRoot("npcCreator");
+    }
+    @FXML private void openMonsterCreator() throws IOException
+    {
+        App.setRoot("monsterCreator");
+    }
 }

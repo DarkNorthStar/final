@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.tabletop.MonsterCreatorController">
+   <children>
+      <Label prefHeight="258.0" prefWidth="1227.0" text="monster Creator" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Felix Titling" size="96.0" />
+         </font></Label>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="Monster Name" />
+                  <TextField fx:id="monsterNameInput" />
+                  <Label prefHeight="18.0" prefWidth="14.0" text="hp" textAlignment="RIGHT" />
+                  <TextField fx:id="hpInput" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="Traites" />
+                        <TextArea fx:id="traitsInput" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="Bio" />
+                        <TextArea fx:id="bioInput" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button mnemonicParsing="false" onAction="#save" prefHeight="62.0" prefWidth="376.0" text="Save" />
+      <Button mnemonicParsing="false" onAction="#returnGameCreator" prefHeight="62.0" prefWidth="304.0" text="Return to Game Creator" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

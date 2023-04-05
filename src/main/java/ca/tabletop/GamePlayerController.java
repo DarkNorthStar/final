@@ -1,6 +1,8 @@
 package ca.tabletop;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
@@ -22,7 +24,7 @@ public class GamePlayerController
     //                  INITIALIZE
     //****************************************************/
     @FXML
-    protected void initialize() throws UnsupportedAudioFileException, IOException, LineUnavailableException
+    protected void initialize() throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException
     {
         App.startGamePlayer(this);
 
