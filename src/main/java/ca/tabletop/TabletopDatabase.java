@@ -108,4 +108,15 @@ public class TabletopDatabase
         preparedAddQuest.setString(2, quest.getDetails());
         preparedAddQuest.executeUpdate();   
     }
+
+    public void addItem(Item item) throws SQLException
+    {
+        String addItemStatment = "INSERT INTO Items(name, weight, value) VALUES(?,?,?)";
+        PreparedStatement preparedAddQuest = connection.prepareStatement(addItemStatment);
+        preparedAddQuest.setString(1, item.getName());
+        preparedAddQuest.setInt(2, item.getWeight());
+        preparedAddQuest.setInt(3, item.getValue());
+
+        preparedAddQuest.executeUpdate();   
+    }
 }

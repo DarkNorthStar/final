@@ -7,9 +7,12 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 public class GamePlayerController 
 {
@@ -21,6 +24,13 @@ public class GamePlayerController
     @FXML private TextArea textAreaQuests;
     @FXML private TextArea textAreaEvents;
     @FXML private TextArea textAreaDice;
+    @FXML private ListView<String> listViewInventory;
+
+    @FXML private TextField itemNameInput;
+    @FXML private TextField itemWeightInput;
+    @FXML private TextField itemValueInput;
+
+    @FXML private Text errorMessage;
 
     //****************************************************/
     //                  INITIALIZE
@@ -56,9 +66,27 @@ public class GamePlayerController
     //****************************************************/
     //                  INVENTORY
     //****************************************************/
-    public void addItemToInventory()
+    public void addItemToInventory() throws SQLException
     {
-        //Item item = new item();
+        try
+        {
+            Item item = new Item(itemNameInput.getText(), Integer.parseInt(itemWeightInput.getText()), Integer.parseInt(itemValueInput.getText()));
+        
+            //Add to database
+            App.addItem(item);
+            // add to listview
+            listViewInventory.getItems().add(item.toString());
+
+            // Reset inputs
+            itemNameInput.clear();
+            itemWeightInput.clear();
+            itemValueInput.clear();
+        }
+        catch(Exception ex)
+        {
+            errorMessage.setText("INVALID DATA");
+            System.out.println(ex.getMessage());
+        }
     }
     //****************************************************/
     //                  UTILITY

@@ -36,4 +36,10 @@ public class Item
     public void setValue(int value) {
         this.value = value;
     }
+    
+    public String toString()
+    {
+        String string = name + " | " + weight + "lbs | " + value + "G | ";
+        return string;
+    }
 }

@@ -101,6 +101,10 @@ public class App extends Application
     {
         tabletopDatabase.addQuest(quest);
     }
+    public static void addItem(Item item) throws SQLException
+    {
+        tabletopDatabase.addItem(item);
+    }
     //****************************************************/
     //                  SERVER CONTROLS
     //****************************************************/
