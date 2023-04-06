@@ -1,3 +1,15 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   CommandReader.java
+ *  Description:
+ *              This is the command reader.
+ *              The command reader is used by the game player to read commands sent over from the game master.
+ *              The command reader runs in its own thread so that it doesnt stop the rest of the application while looking for commands.
+ *              When the command reader reads a message from the server it interprets it as a message, command, quest, or event
+ *              and triggers functions of the game player based on that.
+ * 
+ */
 package ca.tabletop;
 
 //****************************************************/
@@ -96,9 +108,9 @@ public class CommandReader extends Thread
     // Reads and interprets a command
     private void readCommand(String message) throws IOException, UnsupportedAudioFileException, LineUnavailableException 
     {
-        int index = 0;
-        String indexString = "";
-        // Checks for indexes in the command "TODO effective but not the best way to do things"
+        int index = 0; // Int for the index found at the end of a change command
+        String indexString = ""; // String for getting the index out of the message
+        // Checks for indexes in the command
         if(message.length() > App.getEffectChangeCommand().length())
         {
             try
@@ -138,6 +150,7 @@ public class CommandReader extends Thread
             }
             catch(NumberFormatException ex)
             {
+                // Error Message to console
                 System.out.println("Not a number");
             }
         }
@@ -163,7 +176,7 @@ public class CommandReader extends Thread
         }
         else if(message.equals(App.getMusicChangeCommand()))
         {
-            // Changes to a specific music file TODO needs the file number to add
+            // Changes to a specific music file
             AudioPlayer.changeMusicFile(index);
             System.out.println("Command: Change Music to " + index);
         }
@@ -175,7 +188,7 @@ public class CommandReader extends Thread
         }
         else if(message.equals(App.getEffectChangeCommand()))
         {
-            // Changes to a specific effect file TODO Needs the file number to add
+            // Changes to a specific effect file
             AudioPlayer.changeEffectFile(index);
             System.out.println("Command: Change Effect to " + index);
         }

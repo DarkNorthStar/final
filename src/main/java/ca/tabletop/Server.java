@@ -6,7 +6,8 @@
  *  Date Created :          2023-01-31
  *  Date Last Modifyed:     2023-01-31
  *  Description:
- *              This...
+ *              This is the server class. the server class is used by the game master to allow for game players to connect.
+ *              The server is then used by the game master to send commands over the network to connected game players.
  * 
  */
 package ca.tabletop;

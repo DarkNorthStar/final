@@ -1,7 +1,20 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   Character.java
+ *  Description:
+ *              This is a basic form of a character from D&D 5E, its made to get the most important parts.
+ *              Planned Additions to Character:
+ *                  AC: AC was dropped to be later included with equipment as armor will play a role in AC calculation.
+ *                  Equipment: Equipment is a later planned feature (This will include equipment in the characters inventory and on the character that will play a role in the AC calculation)
+ *                  Skills: Skills are in the character but are not used.
+ */
 package ca.tabletop;
 
+// Character for D&D 5E
 public class Character 
 {
+    // Constructor for creating a character without id
     public Character(String characterName, String characterClass, int level, String alignment, int xp, int hp,
             String bio, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         this.characterName = characterName;
@@ -18,8 +31,10 @@ public class Character
         this.wisdom = wisdom;
         this.charisma = charisma;
     }
+
     // Attributes
     // Character information
+    // Id for character loaded from the database
     private int id;
     public int getId() {
         return id;
@@ -28,6 +43,7 @@ public class Character
         this.id = id;
     }
 
+    // The name for the character
     private String characterName;
     public String getCharacterName() {
         return characterName;
@@ -36,6 +52,7 @@ public class Character
         this.characterName = characterName;
     }
 
+    // The class for the character
     private String characterClass;
     public String getCharacterClass() {
         return characterClass;
@@ -44,6 +61,7 @@ public class Character
         this.characterClass = characterClass;
     }
 
+    // The level of the character
     private int level;
     public int getLevel() {
         return level;
@@ -52,6 +70,7 @@ public class Character
         this.level = level;
     }
 
+    // The alignment of the character
     private String alignment;
     public String getAlignment() {
         return alignment;
@@ -60,6 +79,7 @@ public class Character
         this.alignment = alignment;
     }
 
+    // How much Xp the character has
     private int xp;
     public int getXp() {
         return xp;
@@ -68,6 +88,7 @@ public class Character
         this.xp = xp;
     }
 
+    // The max hp of the character
     private int hp;
     public int getHp() {
         return hp;
@@ -76,6 +97,7 @@ public class Character
         this.hp = hp;
     }
 
+    // The bio of the character
     private String bio;
     public String getBio() {
         return bio;
@@ -92,7 +114,6 @@ public class Character
     public void setStrength(int strength) {
         this.strength = strength;
     }
-
     private int dexterity;
     public int getDexterity() {
         return dexterity;
@@ -100,7 +121,6 @@ public class Character
     public void setDexterity(int dexterity) {
         this.dexterity = dexterity;
     }
-
     private int constitution;
     public int getConstitution() {
         return constitution;
@@ -108,7 +128,6 @@ public class Character
     public void setConstitution(int constitution) {
         this.constitution = constitution;
     }
-
     private int intelligence;
     public int getIntelligence() {
         return intelligence;
@@ -116,7 +135,6 @@ public class Character
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
     }
-
     private int wisdom;
     public int getWisdom() {
         return wisdom;
@@ -124,7 +142,6 @@ public class Character
     public void setWisdom(int wisdom) {
         this.wisdom = wisdom;
     }
-    
     private int charisma;
     public int getCharisma() {
         return charisma;

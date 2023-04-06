@@ -1,3 +1,11 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   Quest.java
+ *  Description:
+ *          This is the quest class. the quest class represents an objective given to the players.
+ *          Quests are passed to the game player from the game master and added to the database.
+ */
 package ca.tabletop;
 
 public class Quest 

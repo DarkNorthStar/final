@@ -1,3 +1,12 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   GameMasterController.java
+ *  Description:
+ *          This is the game master controller. The game master is the view for the DM to control the diffrent systems on the game players connected to it.
+ *          The game master has control of the slideshow, audioplayer and can send updates to quest/ events and send private messages to specific players.
+ * 
+ */
 package ca.tabletop;
 
 import java.io.IOException;

@@ -1,3 +1,11 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   App.java
+ *  Description:
+ *              This is the main file of the project Tabletop Master System.
+ *              This file controls the functions of the system and communicates information between its diffrent parts.
+ */
 package ca.tabletop;
 
 // Imports
@@ -41,15 +49,15 @@ public class App extends Application
     //****************************************************/
     private static Scene scene; // The main window
     // Collections of files that are loaded into the system
-    private static List<File> musicFiles = FileManager.loadMusicFiles(); // music
-    private static List<File> effectFiles = FileManager.loadEffectFiles(); // effect
-    private static List<File> imageFiles = FileManager.loadImageFiles(); // images
+    private static List<File> musicFiles = FileManager.loadMusicFiles();    // music
+    private static List<File> effectFiles = FileManager.loadEffectFiles();  // effect
+    private static List<File> imageFiles = FileManager.loadImageFiles();    // images
     // Server / Client Variables
     private static Server server; // Server for game master instances
     private static Client client; // Client for game player instances
-    private static TabletopDatabase tabletopDatabase; // Database
+    private static TabletopDatabase tabletopDatabase; // Database for storage
 
-    // Functions called when game master is launched
+    // Functions called when game master is launched Used to load the data needed for the game master
     public static void startGameMaster() throws IOException, UnsupportedAudioFileException, LineUnavailableException, SQLException
     {
         // Starts the server for the game master to send messages to connected instances of game players
@@ -59,7 +67,7 @@ public class App extends Application
         // Loads images into the slide show to be displayed
         SlideShow.readyImages(imageFiles);
     }
-    // Function called when the game player is launched. used to load the data needed for the game player
+    // Function called when the game player is launched. Used to load the data needed for the game player
     public static void startGamePlayer(GamePlayerController controller) throws UnsupportedAudioFileException, IOException, LineUnavailableException, SQLException
     {
         // Loads the music and effect files into the audio player to be played
@@ -73,34 +81,42 @@ public class App extends Application
     //****************************************************/
     //                  DATABASE CONTROLS
     //****************************************************/
+    // Returns the character with the passed id
     public static Character getCharacter(int id) throws SQLException
     {
         return tabletopDatabase.getCharacter(id);
     }
+    // Adds a character to the database
     public static void setCharacter(Character character) throws SQLException
     {
         tabletopDatabase.setCharacter(character);
     }
+    // Returns the NPC with the passed id from the database
     public static Character getNPC(int id) throws SQLException
     {
         return tabletopDatabase.getNPC(id);
     }
+    // Adds a NPC to the database
     public static void setNPC(Character character) throws SQLException
     {
         tabletopDatabase.setNPC(character);
     }
+    // Returns a monster with the passed id from the database
     public static Monster getMonster(int id) throws SQLException
     {
         return tabletopDatabase.getMonster(id);
     }
+    // Adds a monster to the database
     public static void setMonster(Monster monster) throws SQLException
     {
         tabletopDatabase.setMonster(monster);
     }
+    // Adds a quest to the database
     public static void addQuest(Quest quest) throws SQLException
     {
         tabletopDatabase.addQuest(quest);
     }
+    // Adds a item to the database
     public static void addItem(Item item) throws SQLException
     {
         tabletopDatabase.addItem(item);
@@ -108,7 +124,7 @@ public class App extends Application
     //****************************************************/
     //                  SERVER CONTROLS
     //****************************************************/
-    // Functions to be used by the game master to send commands to the game players
+    // Functions That are used by the game master to send commands to game players using the server
     public static boolean acceptConnection(){return server.acceptSocket();}
     public static void sendMessageToPlayer(int player, String message){server.sendMessage(player, message);}
     public static void sendNextEnvironment() throws IOException{server.sendCommand(ENV_NEXT_COMMAND);}
@@ -166,7 +182,7 @@ public class App extends Application
     public static List<File> getMusicFiles(){return musicFiles;}
     // Function that returns the effect files in the system
     public static List<File> getEffectFiles(){return effectFiles;}
-    // function that returns the image files in the system
+    // Function that returns the image files in the system
     public static List<File> getImageFiles(){return imageFiles;}
     // Command Getters that return the constants for the commands the game master can send to game players
     public static String getMusicNextCommand(){return MUSIC_NEXT_COMMAND;}

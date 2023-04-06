@@ -1,3 +1,13 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   GameCreatorController.java
+ *  Description:
+ *          This is the game creator controller. the game creator is the place for adding files to the system.
+ *          The game creator is the hub for collecting the files and other parts of the system you want to add.
+ *          It houses functions for adding the diffrent files to the system (effect, image, music) and can open the other creators for additions to the database.
+ * 
+ */
 package ca.tabletop;
 
 import java.io.IOException;

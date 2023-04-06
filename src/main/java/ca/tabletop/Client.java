@@ -6,7 +6,8 @@
  *  Date Created :          2023-01-31
  *  Date Last Modifyed:     2023-01-31
  *  Description:
- *              This...
+ *              This is the client.
+ *              The client is used by the game player to connect to a game masters server.
  * 
  */
 package ca.tabletop;

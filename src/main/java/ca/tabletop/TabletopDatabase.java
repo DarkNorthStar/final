@@ -1,3 +1,11 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   SlideShow.java
+ *  Description:
+ *          This is the database connection class is houses the connection and does all the communication with the database
+ *          Anywhere the database needs to be accessed that controller calls the app to access the database through the TabletopDatabase object.
+ */
 package ca.tabletop;
 
 import java.sql.Connection;
@@ -8,13 +16,16 @@ import java.sql.SQLException;
 
 public class TabletopDatabase 
 {
-    private static Connection connection;
+    // Variables
+    private static Connection connection; // Contection to the database
 
+    // Contructor
     public TabletopDatabase() throws SQLException
     {
         connection = DriverManager.getConnection("jdbc:sqlite:TabletopDatabase.db");
     }
 
+    // Returns a character with the passed id from the database
     public Character getCharacter(int id) throws SQLException
     {
         String getCharacterStatment = "Select * FROM Characters WHERE ID =?";
@@ -26,6 +37,7 @@ public class TabletopDatabase
          results.getInt("wisdom"),results.getInt("charisma"));
         return character;
     }
+    // Adds a character to the database
     public void setCharacter(Character character) throws SQLException
     {
         String setCharcterStatment = "INSERT INTO Characters(characterName, characterClass, level, alignment, xp, hp, bio, strength, dexterity, constitution, intelligence, wisdom, charisma) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -47,6 +59,7 @@ public class TabletopDatabase
         preparedSetCharacter.executeUpdate();
     }
 
+    // Returns a NPC with the passed id from the database
     public Character getNPC(int id) throws SQLException
     {
         String getNPCStatment = "Select * FROM NPCs WHERE ID =?";
@@ -58,6 +71,7 @@ public class TabletopDatabase
          results.getInt("wisdom"),results.getInt("charisma"));
         return character;
     }
+    // Adds a NPC to the database
     public void setNPC(Character character) throws SQLException
     {
         String setNPCStatment = "INSERT INTO NPCs(characterName, characterClass, level, alignment, xp, hp, bio, strength, dexterity, constitution, intelligence, wisdom, charisma) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -79,6 +93,7 @@ public class TabletopDatabase
         preparedSetNPC.executeUpdate();
     }
 
+    // Returns a monster with the passed id from the database
     public Monster getMonster(int id) throws SQLException
     {
         String getMonsterStatment = "Select * FROM Monsters WHERE ID =?";
@@ -88,6 +103,7 @@ public class TabletopDatabase
         Monster monster = new Monster(results.getString("monsterName"), results.getInt("hp"), results.getString("traits"), results.getString("bio"));
         return monster;
     }
+    // Adds a monster to the database
     public void setMonster(Monster monster) throws SQLException
     {
         String setMonsterStatment = "INSERT INTO Monsters(monsterName, hp, traits, bio) VALUES(?,?,?,?)";
@@ -100,6 +116,7 @@ public class TabletopDatabase
         preparedSetMonster.executeUpdate();
     }
 
+    // Adds a quest to the database
     public void addQuest(Quest quest) throws SQLException
     {
         String addQuestStatment = "INSERT INTO Quests(title, details) VALUES(?,?)";
@@ -109,6 +126,7 @@ public class TabletopDatabase
         preparedAddQuest.executeUpdate();   
     }
 
+    // Adds a item to the database
     public void addItem(Item item) throws SQLException
     {
         String addItemStatment = "INSERT INTO Items(name, weight, value) VALUES(?,?,?)";

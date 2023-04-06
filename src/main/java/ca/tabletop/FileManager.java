@@ -1,3 +1,11 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   FileManager.java
+ *  Description:
+ *              This is the file manager. the file manager manages movement of files and loading of files (music, effect, image).
+ *              The file manager is used on startup to load files into the system and by the game creator to add files to the system.
+ */
 package ca.tabletop;
 //****************************************************/
 //                  IMPORTS

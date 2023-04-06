@@ -1,3 +1,10 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   NPCCreatorController.java
+ *  Description:
+ *          This is the NPC creator controller. An NPC is the same as a character but treated diffrently in the database.
+ */
 package ca.tabletop;
 
 import java.io.IOException;

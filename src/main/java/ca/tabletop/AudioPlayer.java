@@ -1,3 +1,13 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   AudioPlayer.java
+ *  Description:
+ *              This is the audio player for Tabletop Master System.
+ *              The audio player is used in the game master and game player parts of the system.
+ *              Its purpose is to control the audio streams for the music and effects
+ * 
+ */
 package ca.tabletop;
 //****************************************************/
 //                  IMPORTS
@@ -229,7 +239,7 @@ public class AudioPlayer
          // Get a new AudioInputStream.
          effectStream = AudioSystem.getAudioInputStream(loadedEffects.get(index));
 
-         // ready the new effect Clip.
+         // Ready the new effect Clip.
          readyEffect = AudioSystem.getClip();
          readyEffect.open(effectStream);
       }

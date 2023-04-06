@@ -1,3 +1,11 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   Dice.java
+ *  Description:
+ *              This is a simple class for dice.
+ *              it simply houses rolls for dice used in D&D 5E
+ */
 package ca.tabletop;
 //****************************************************/
 //                  IMPORTs

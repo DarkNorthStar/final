@@ -1,3 +1,10 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   MonsterCreatorController.java
+ *  Description:
+ *             This is the monster creator controller it houses the function to create a monster from the details in the creator and add it to the database.
+ */
 package ca.tabletop;
 
 import java.io.IOException;

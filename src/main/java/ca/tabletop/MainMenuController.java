@@ -1,3 +1,11 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   MainMenuController.java
+ *  Description:
+ *             This is the main menu controller is the staring spot for any user of the system.
+ *             From here the user can launch the game player or game master or go into the game creator to set thing up
+ */
 package ca.tabletop;
 //****************************************************/
 //                  IMPORTS

@@ -39,6 +39,7 @@
                         <Font name="Felix Titling" size="24.0" />
                      </font>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#skipConnection" text="Skip" />
                   <Text fx:id="textErrorMessage" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="637.205078125">
                      <font>
                         <Font size="18.0" />

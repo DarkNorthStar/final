@@ -1,3 +1,10 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   Item.java
+ *  Description:
+ *          This is the item class. The item class is used discribe an item such as a tankard and manage that in an inventory
+ */
 package ca.tabletop;
 
 public class Item 

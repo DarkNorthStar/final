@@ -1,3 +1,12 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   GamePlayerController.java
+ *  Description:
+ *          This is the controller for the game player.
+ *          This class controls it houses the functions triggered by the UI and output to the UI based on the commands from the command reader
+ * 
+ */
 package ca.tabletop;
 
 import java.io.IOException;
@@ -66,6 +75,10 @@ public class GamePlayerController
     //****************************************************/
     //                  INVENTORY
     //****************************************************/
+    public void loadFromDatabase()
+    {
+        //TODO load items from the database to load into the listview
+    }
     public void addItemToInventory() throws SQLException
     {
         try

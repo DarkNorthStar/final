@@ -1,3 +1,12 @@
+/*
+ *  Author :                Tyler Osborne
+ *  Project:                Tabletop Master System
+ *  File:                   Monster.java
+ *  Description:
+ *             This is the monster class file.
+ *             The monster is a representation of a monster to fight.
+ *             The class is used to create a monster then add it to the database.     
+ */
 package ca.tabletop;
 
 public class Monster 
